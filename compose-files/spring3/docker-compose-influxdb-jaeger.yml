@@ -243,7 +243,8 @@ services:
   ## Artificial load on Demo
   load:
     restart: always
-    image: inspectit/spring-petclinic-load:1.0
+    platform: linux/arm64
+    image: ntlevinkerschberger/inspectit-petclinic-load:main
     container_name: load-generator
     hostname: load-generator
 

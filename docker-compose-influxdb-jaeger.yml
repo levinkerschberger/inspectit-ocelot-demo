@@ -1,5 +1,3 @@
-version: '3'
-
 services:
   #  Ocelot
   ## Serves as a collector for traces
@@ -204,7 +202,8 @@ services:
   #  Load Generator
   ## Artificial load on Demo
   load:
-    image: inspectit/spring-petclinic-load:1.0
+    image: ntlevinkerschberger/inspectit-petclinic-load
+    platform: linux/amd64
     container_name: load-generator
     hostname: load-generator
 
