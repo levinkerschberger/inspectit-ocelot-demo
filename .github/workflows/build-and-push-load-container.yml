@@ -48,7 +48,7 @@ jobs:
           context: ./load
           platforms: ${{ matrix.platform }}
           labels: ${{ steps.meta.outputs.labels }}
-          outputs: type=image,name=${{ vars.DOCKER_REGISTRY }}/${{vars.DOCKER_LOAD_IMAGE_NAME}}:${{vars.DOCKER_LOAD_IMAGE_TAG}} ,push-by-digest=true,name-canonical=true,push=true
+          outputs: type=image,name=${{ vars.DOCKER_REGISTRY }}/${{vars.DOCKER_LOAD_IMAGE_NAME}}:${{vars.DOCKER_LOAD_IMAGE_TAG}},push-by-digest=true,name-canonical=true,push=true
 
       - name: Export digest
         run: |
