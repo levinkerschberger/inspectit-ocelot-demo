@@ -1,4 +1,8 @@
-FROM node:8-alpine
+FROM --platform=$BUILDPLATFORM node:22-alpine
+
+ARG TARGETPLATFORM
+ARG BUILDPLATFORM
+RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM" > /log
 
 WORKDIR /artillery
 
