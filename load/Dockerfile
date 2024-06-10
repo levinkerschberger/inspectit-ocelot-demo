@@ -1,8 +1,4 @@
-FROM --platform=$BUILDPLATFORM node:22-slim
-
-ARG TARGETPLATFORM
-ARG BUILDPLATFORM
-RUN echo "I am running on $BUILDPLATFORM, building for $TARGETPLATFORM" > /log
+FROM --platform=$BUILDPLATFORM node:22-alpine
 
 WORKDIR /artillery
 
@@ -12,9 +8,7 @@ COPY docker-entrypoint.sh /artillery/docker-entrypoint.sh
 # No need to pin version of curl
 # hadolint ignore=DL3018
 RUN npm install -g artillery@1.6.0-26 --unsafe-perm=true --allow-root && \
-    apt update -y && \
-    apt upgrade -y  && \
-    apt install curl -y && \
+    apk add --no-cache curl && \
     chmod +x /artillery/docker-entrypoint.sh
 
 ENTRYPOINT ["/artillery/docker-entrypoint.sh"]
