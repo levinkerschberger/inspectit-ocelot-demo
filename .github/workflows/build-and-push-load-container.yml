@@ -3,7 +3,7 @@ name: Docker Build And Push Load Driver
 on:
   push:
     branches:
-      - master
+      - main
   workflow_dispatch:
 
 jobs:
