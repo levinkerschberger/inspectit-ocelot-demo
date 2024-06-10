@@ -202,7 +202,7 @@ services:
   #  Load Generator
   ## Artificial load on Demo
   load:
-    image: ntlevinkerschberger/inspectit-petclinic-load
+    image: inspectit/spring-petclinic-load:latest
     platform: linux/amd64
     container_name: load-generator
     hostname: load-generator

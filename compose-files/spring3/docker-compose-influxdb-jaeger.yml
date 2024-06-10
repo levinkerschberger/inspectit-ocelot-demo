@@ -17,8 +17,7 @@ services:
   ## Fetches the configuration
   ocelot-config-server:
     restart: always
-    image: ntlevinkerschberger/config-server:snapshot
-    platform: linux/arm64/v7
+    image: inspectit/inspectit-ocelot-configurationserver:${INSPECTIT_OCELOT_VERSION}
     container_name: ocelot-config-server
     deploy:
       resources:
@@ -243,8 +242,7 @@ services:
   ## Artificial load on Demo
   load:
     restart: always
-    platform: linux/arm64
-    image: ntlevinkerschberger/inspectit-petclinic-load:main
+    image: inspectit/spring-petclinic-load:latest
     container_name: load-generator
     hostname: load-generator
 
