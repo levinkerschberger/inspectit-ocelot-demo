@@ -9,7 +9,7 @@ on:
 jobs:
   build-and-push:
     name: 'Build and Push Load Driver Image'
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v3
     - name: Set up QEMU
