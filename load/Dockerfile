@@ -12,7 +12,9 @@ COPY docker-entrypoint.sh /artillery/docker-entrypoint.sh
 # No need to pin version of curl
 # hadolint ignore=DL3018
 RUN npm install -g artillery@1.6.0-26 --unsafe-perm=true --allow-root && \
-    apk add --no-cache curl && \
+    apt update -y && \
+    apt upgrade -y  && \
+    apt install curl -y && \
     chmod +x /artillery/docker-entrypoint.sh
 
 ENTRYPOINT ["/artillery/docker-entrypoint.sh"]
