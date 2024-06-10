@@ -30,4 +30,4 @@ jobs:
         context: ./load
         platforms: linux/amd64,linux/arm64,linux/arm64/v8,linux/arm64/v7
         push: true
-        tags: ${{vars.DOCKER_REGISTRY}}/${{vars.DOCKER_IMAGE_NAME}}:${{vars.DOCKER_IMAGE_TAG}}
+        tags: ${{vars.DOCKER_REGISTRY}}/${{vars.DOCKER_LOAD_IMAGE_NAME}}:${{vars.DOCKER_LOAD_IMAGE_TAG}}
